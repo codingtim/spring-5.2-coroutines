@@ -23,13 +23,12 @@ class MyController {
         return ResponseEntity.ok(ControllerResult("normal"))
     }
 
-    //@RequestMapping(path = ["/executeCo"], method = [RequestMethod.GET])
     @GetMapping(path = ["/executeCo"])
     suspend fun executeCo(): ResponseEntity<ControllerResult> {
         logger.info(Thread.currentThread().name)
         delay(10)
         logger.info(Thread.currentThread().name)
-        return ResponseEntity.ok(ControllerResult("test"))
+        return ResponseEntity.ok(ControllerResult("testCo"))
     }
 
     @RequestMapping(path = ["/execute"], method = [RequestMethod.GET])
